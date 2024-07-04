@@ -1,0 +1,96 @@
+.plantDetailDiv {
+  width: 100%;
+  height: max-content;
+  background-image: url(../Images/bg3.jpg);
+  background-size: cover;
+}
+
+.opacityPlantDetailDiv {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.692);
+  /* background-color: black; */
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.informationOfPlan {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #4caf50;
+  margin-top: 5px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.596) 0px 0px 5px 5px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.informationOfPlan h1 {
+  text-align: center;
+  font-size: 20px;
+}
+
+.informationOfPlan h3 {
+  font-size: 20px;
+}
+
+.informationOfPlan p {
+  color: white;
+  font-weight: bold;
+}
+
+.informationOfPlan .row {
+  margin-top: 2%;
+}
+
+.informationOfPlan label {
+  color: white;
+  font-weight: bold;
+}
+
+.informationOfPlan input {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.informationOfPlan button {
+  margin-top: 2%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #ffeb3b;
+  /* border: black solid 2px; */
+  border: none;
+  border-radius: 8px;
+  color: rgb(2, 85, 39);
+  font-weight: bold;
+
+  &:hover {
+    transition: 0.3;
+    box-shadow: rgba(0, 0, 0, 0.479) 2px 2px 2px 2px;
+    border: none;
+  }
+}
+
+.linkBackToHome {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 5%;
+  margin-right: 5%;
+  background-color: #4caf50;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 50%;
+}

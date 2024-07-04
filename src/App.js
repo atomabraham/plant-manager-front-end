@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PlantList from "./Components/PlantList";
+import AddPlant from "./Components/AddPlant";
+import PlantDetails from "./Components/PlantDetails";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<PlantList />} />
+          <Route path="/add-plant" element={<AddPlant />} />
+          <Route path="/plant/:id" element={<PlantDetails />} />
+        </Routes>
+      </BrowserRouter>
+      {/* test */}
     </div>
   );
 }
