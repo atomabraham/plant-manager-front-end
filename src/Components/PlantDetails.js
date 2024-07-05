@@ -148,19 +148,22 @@ function PlantDetails() {
           </p>
 
           {/* Affiche les besoins en eau si disponibles */}
-          {arrosage ? (
+          {plant.arrosages ? (
             <div>
               <h2>Arrosage requis</h2>
               <p>
                 Quantité:{" "}
-                <span style={{ color: "#212529" }}>
-                  {arrosage.quantity} Litres tous les {arrosage.frequency} Jours
-                </span>
+                {plant.arrosages.map((arrosage) => (
+                  <span style={{ color: "#212529" }}>
+                    {arrosage.quantity} Litre tous les {arrosage.frequency}{" "}
+                    Jours
+                  </span>
+                ))}
               </p>
               {/* Interface de modification des besoins en eau */}
               {isEditing ? (
                 <div>
-                  <label>Quantité (Litres):</label>
+                  <label>Quantité (Liters):</label>
                   <input
                     type="number"
                     value={quantity}
@@ -177,25 +180,17 @@ function PlantDetails() {
                   <button onClick={handleArrosageUpdate}>Mettre à jour</button>
                 </div>
               ) : (
-                <button
-                  onClick={() => {
-                    setIsEditing(true);
-                    setQuantity(arrosage.quantity); // Met à jour la quantité d'eau à arroser
-                    setFrequency(arrosage.frequency); // Met à jour la fréquence d'arrosage
-                  }}
-                >
-                  Modifier
-                </button>
+                <button onClick={() => setIsEditing(true)}>Modifier</button>
               )}
             </div>
           ) : (
             // Formulaire pour ajouter les besoins en eau s'ils ne sont pas déjà définis
             <div>
-              <h3>Ajouter les besoins en eau</h3>
+              <h3>Configurer les besoins en eau</h3>
               <form onSubmit={handleArrosageSubmit}>
                 <div className="row">
                   <div className="col-md-4">
-                    <label>Quantité (Litre):</label>
+                    <label>Quantité (Liters):</label>
                   </div>
                   <div className="col-md-8">
                     <input
@@ -219,7 +214,7 @@ function PlantDetails() {
                     />
                   </div>
                 </div>
-                <button type="submit">Ajouter l'arrosage</button>
+                <button type="submit">Configurer l'arrosage</button>
               </form>
             </div>
           )}
